@@ -84,7 +84,7 @@ extension UIViewController {
     
     
     
-    func setupNavigationController() {
+    func setupNavigationBar(title: String, prefersLargeTitles: Bool) {
         let appearance = UINavigationBarAppearance()
         let navBar = navigationController?.navigationBar
         
@@ -96,10 +96,12 @@ extension UIViewController {
         navBar?.compactAppearance = appearance
         navBar?.scrollEdgeAppearance = appearance
         
-        navBar?.prefersLargeTitles = true
-        navigationItem.title = "My To-Do"
+        navBar?.prefersLargeTitles = prefersLargeTitles
+        navigationItem.title = title
         navBar?.tintColor = .white
         navBar?.isTranslucent = true
+        navigationItem.largeTitleDisplayMode = .automatic
+        navBar?.sizeToFit()
         
         navBar?.overrideUserInterfaceStyle = .dark
     }

@@ -7,18 +7,29 @@
 
 import UIKit
 
+//MARK: - Creating a custom view
+
 class MainView: UIView {
     
+    //MARK: - Properties
+    
     lazy var collectionView: UICollectionView = {
+        // #step_3
         let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        // #step_2
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
         
+        // #step_1 setting up our collectionView
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemGroupedBackground
         
         return collectionView
     }()
+    
+    //MARK: - Lifecycle
     
     init() {
         super.init(frame: .zero)
@@ -29,6 +40,8 @@ class MainView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    //MARK: - Helpers
     
     func setup() {
         backgroundColor = .blue

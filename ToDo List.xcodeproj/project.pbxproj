@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B043613255518620092281C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B043612255518620092281C /* Extensions.swift */; };
 		2B04364C255696CF0092281C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B04364B255696CF0092281C /* MainView.swift */; };
-		2B3DFFEE2559091500311F22 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DFFED2559091500311F22 /* NetworkingService.swift */; };
+		2B378B5C255920CF000934F2 /* NewTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B378B5B255920CF000934F2 /* NewTaskController.swift */; };
 		2BDA387E2553F7F60093CDD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA387D2553F7F60093CDD8 /* AppDelegate.swift */; };
 		2BDA38802553F7F60093CDD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA387F2553F7F60093CDD8 /* SceneDelegate.swift */; };
 		2BDA38822553F7F60093CDD8 /* ToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA38812553F7F60093CDD8 /* ToDoController.swift */; };
@@ -17,13 +17,12 @@
 		2BDA38882553F7F60093CDD8 /* ToDo_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA38862553F7F60093CDD8 /* ToDo_List.xcdatamodeld */; };
 		2BDA388A2553F7F70093CDD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA38892553F7F70093CDD8 /* Assets.xcassets */; };
 		2BDA388D2553F7F70093CDD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA388B2553F7F70093CDD8 /* LaunchScreen.storyboard */; };
-		2BDA389C25550A460093CDD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA389B25550A460093CDD8 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B043612255518620092281C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2B04364B255696CF0092281C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		2B3DFFED2559091500311F22 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		2B378B5B255920CF000934F2 /* NewTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskController.swift; sourceTree = "<group>"; };
 		2BDA387A2553F7F60093CDD8 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDA387D2553F7F60093CDD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BDA387F2553F7F60093CDD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +32,6 @@
 		2BDA38892553F7F70093CDD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BDA388C2553F7F70093CDD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BDA388E2553F7F70093CDD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BDA389B25550A460093CDD8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +90,6 @@
 		2BDA389E25550A490093CDD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BDA389B25550A460093CDD8 /* User.swift */,
-				2B3DFFED2559091500311F22 /* NetworkingService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2BDA38812553F7F60093CDD8 /* ToDoController.swift */,
+				2B378B5B255920CF000934F2 /* NewTaskController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,9 +184,8 @@
 				2BDA38822553F7F60093CDD8 /* ToDoController.swift in Sources */,
 				2B04364C255696CF0092281C /* MainView.swift in Sources */,
 				2B043613255518620092281C /* Extensions.swift in Sources */,
-				2B3DFFEE2559091500311F22 /* NetworkingService.swift in Sources */,
+				2B378B5C255920CF000934F2 /* NewTaskController.swift in Sources */,
 				2BDA387E2553F7F60093CDD8 /* AppDelegate.swift in Sources */,
-				2BDA389C25550A460093CDD8 /* User.swift in Sources */,
 				2BDA38802553F7F60093CDD8 /* SceneDelegate.swift in Sources */,
 				2BDA38882553F7F60093CDD8 /* ToDo_List.xcdatamodeld in Sources */,
 			);
