@@ -11,6 +11,8 @@ class NewTaskController: UIViewController {
     
     //MARK: - Properties
     
+    var newTask: String?
+    
     var cardView: UIView = {
         let myView = UIView()
         myView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -28,10 +30,9 @@ class NewTaskController: UIViewController {
     
     private let doneButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "checkmark", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .regular)), for: .normal)
+        button.setImage(K.checkmarkImage, for: .normal)
         button.tintColor = .white
         button.backgroundColor = #colorLiteral(red: 0.1285493338, green: 0.1285493338, blue: 0.1285493338, alpha: 1)
-        
         button.layer.shadowOpacity = 0.8
         button.layer.shadowRadius = 10
         button.layer.shadowOffset = CGSize(width: -3, height: -3)
@@ -81,7 +82,7 @@ class NewTaskController: UIViewController {
     
     @objc func doneButtonTapped() {
         print("Save the task")
-        
+        newTask = taskTextField.text
         navigationController?.popToRootViewController(animated: true)
     }
 }

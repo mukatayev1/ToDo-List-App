@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window  = UIWindow(windowScene: scene)
         
-        let vc = ToDoController()
+        let vc = ToDoController(style: .insetGrouped)
         let nav = UINavigationController(rootViewController: vc)
         
         window.rootViewController = nav
