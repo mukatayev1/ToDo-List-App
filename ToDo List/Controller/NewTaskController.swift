@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol NewTaskControllerDelegate {
+    func didAddTask(_ task: Task)
+}
+
 class NewTaskController: UIViewController {
     
     //MARK: - Properties
+    
+    var delegate: NewTaskControllerDelegate?
     
     var newTask: Task?
     
@@ -99,7 +105,8 @@ class NewTaskController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
         
         newTask = Task(text: taskTextField.text ?? "")
-
+        
+        delegate?.didAddTask(newTask!)
     }
     
     @objc func textDidChange() {

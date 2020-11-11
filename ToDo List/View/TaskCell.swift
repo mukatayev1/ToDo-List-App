@@ -48,7 +48,10 @@ class TaskCell: UITableViewCell {
     
     func configure() {
         guard let task = task else { return }
-
         textView.text = task.text
+        if task.done == false {
+            textView.textColor = UIColor.black
+        }
+
     }
 }

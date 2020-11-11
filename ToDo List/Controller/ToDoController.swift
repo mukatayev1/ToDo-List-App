@@ -7,13 +7,7 @@
 
 import UIKit
 
-var todoItems = [Task(text: "Buy apples"),
-             Task(text: "Renew subscription"),
-             Task(text: "Go to the bank"),
-             Task(text: "Get ready for the work")]
-
-var completedItems = [Task(text: "Task completed123"),
-                      Task(text: "also done")]
+var todoItems = [Task]()
 
 class ToDoController: UITableViewController {
     
@@ -61,6 +55,17 @@ class ToDoController: UITableViewController {
         source.apply(snapshot)
     }
     
+    func populate(with task: Task, section: Section) {
+//        print("Initial State: \(todoItems)")
+        todoItems.append(task)
+//        print("After adding State: \(todoItems)")
+//        print("The last item in array form: \([todoItems.last!])")
+        
+        var snapshot = self.source.snapshot()
+        snapshot.appendItems([todoItems.last!], toSection: section)
+        self.source.apply(snapshot)
+    }
+    
     //MARK: - TableView
     
     //swiping actions
@@ -74,6 +79,8 @@ class ToDoController: UITableViewController {
             var snapshot = self.source.snapshot()
             snapshot.deleteItems([task])
             self.source.apply(snapshot)
+
+            todoItems.remove(at: indexPath.row)
             
         }
         deleteAction.image = UIImage(systemName: "trash.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .regular))
@@ -86,11 +93,10 @@ class ToDoController: UITableViewController {
         let completedAction = UIContextualAction(style: .normal, title: "Completed") { (action, view, completion) in
             completion(true)
             
-            guard let task = self.source.itemIdentifier(for: indexPath) else {return}
-            
-            
+            guard let completedTask = self.source.itemIdentifier(for: indexPath) else {return}
             var snapshot = self.source.snapshot()
             
+            snapshot.appendItems([completedTask], toSection: .completed)
             self.source.apply(snapshot)
         }
         completedAction.image = UIImage(systemName: "checkmark.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .regular))
@@ -119,11 +125,19 @@ class ToDoController: UITableViewController {
     @objc func barButtonAction(sender: UIBarButtonItem) {
         let vc = NewTaskController()
         navigationController?.pushViewController(vc, animated: true)
+        vc.delegate = self
 //        var snapshot = self.source.snapshot()
 //        snapshot.appendItems(completedItems, toSection: .completed)
 //        self.source.apply(snapshot)
-        
-
+    
     }
 
+}
+
+extension ToDoController: NewTaskControllerDelegate {
+    func didAddTask(_ task: Task) {
+        populate(with: task, section: .todo)
+    }
+    
+    
 }
