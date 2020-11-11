@@ -11,7 +11,9 @@ class NewTaskController: UIViewController {
     
     //MARK: - Properties
     
-    var newTask: String?
+    var newTask: Task?
+    
+    var viewModel = NewTaskViewModel()
     
     var cardView: UIView = {
         let myView = UIView()
@@ -21,10 +23,12 @@ class NewTaskController: UIViewController {
         return myView
     }()
     
-    var taskTextField: UITextField = {
+    private let taskTextField: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Write your task"
-        tf.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        tf.placeholder = "Task to do"
+        tf.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        tf.returnKeyType = .done
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
@@ -32,11 +36,12 @@ class NewTaskController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(K.checkmarkImage, for: .normal)
         button.tintColor = .white
-        button.backgroundColor = #colorLiteral(red: 0.1285493338, green: 0.1285493338, blue: 0.1285493338, alpha: 1)
+        button.backgroundColor = UIColor.systemPurple
         button.layer.shadowOpacity = 0.8
         button.layer.shadowRadius = 10
         button.layer.shadowOffset = CGSize(width: -3, height: -3)
         button.layer.shadowColor = UIColor.darkGray.cgColor
+        button.isEnabled = false
         button.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -46,8 +51,9 @@ class NewTaskController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar(title: "New Task", prefersLargeTitles: false)
-
+        taskTextField.becomeFirstResponder()
         view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        hideKeyboardWhenTappedAround()
         
         //subviews
         subviewCardView()
@@ -56,6 +62,14 @@ class NewTaskController: UIViewController {
     }
     
     //MARK: - Helpers
+    
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            doneButton.isEnabled = true
+        } else {
+            doneButton.isEnabled = false
+        }
+    }
     
     //MARK: - Subviews
     
@@ -82,7 +96,23 @@ class NewTaskController: UIViewController {
     
     @objc func doneButtonTapped() {
         print("Save the task")
-        newTask = taskTextField.text
         navigationController?.popToRootViewController(animated: true)
+        
+        newTask = Task(text: taskTextField.text ?? "")
+
     }
+    
+    @objc func textDidChange() {
+        viewModel.text = taskTextField.text
+        checkFormStatus()
+    }
+    
+}
+
+extension NewTaskController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        taskTextField.resignFirstResponder()
+        return true
+    }
+    
 }

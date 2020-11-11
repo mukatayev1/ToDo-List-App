@@ -82,15 +82,13 @@ extension UIView {
 
 extension UIViewController {
     
-    
-    
     func setupNavigationBar(title: String, prefersLargeTitles: Bool) {
         let appearance = UINavigationBarAppearance()
         let navBar = navigationController?.navigationBar
         
         appearance.configureWithOpaqueBackground()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = #colorLiteral(red: 0.1285493338, green: 0.1285493338, blue: 0.1285493338, alpha: 1)
+        appearance.backgroundColor = UIColor.systemPurple
         
         navBar?.standardAppearance = appearance
         navBar?.compactAppearance = appearance
@@ -106,4 +104,17 @@ extension UIViewController {
         navBar?.overrideUserInterfaceStyle = .dark
     }
     
+}
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

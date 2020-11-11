@@ -9,8 +9,10 @@ import Foundation
 
 struct Task: Hashable {
     var text: String
+    var done = false
 }
 
 enum Section {
-    case main
+    case todo
+    case completed
 }
