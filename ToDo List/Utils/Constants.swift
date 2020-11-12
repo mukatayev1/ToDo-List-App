@@ -12,6 +12,6 @@ struct K {
     
     static let checkmarkImage = UIImage(systemName: "checkmark", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .regular))
     
-    static let checkmarkStarImage = UIImage(systemName: "checkmark.seal.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .medium))?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+    static let checkmarkStarImage = UIImage(systemName: "checkmark.seal.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .medium))?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
 
 }

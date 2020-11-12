@@ -88,7 +88,7 @@ extension UIViewController {
         
         appearance.configureWithOpaqueBackground()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = UIColor.systemPurple
+        appearance.backgroundColor = #colorLiteral(red: 0.5647058824, green: 0.5333333333, blue: 0.831372549, alpha: 1)
         
         navBar?.standardAppearance = appearance
         navBar?.compactAppearance = appearance

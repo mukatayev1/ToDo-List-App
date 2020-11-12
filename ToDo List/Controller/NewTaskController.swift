@@ -42,7 +42,7 @@ class NewTaskController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(K.checkmarkImage, for: .normal)
         button.tintColor = .white
-        button.backgroundColor = UIColor.systemPurple
+        button.backgroundColor = #colorLiteral(red: 0.5647058824, green: 0.5333333333, blue: 0.831372549, alpha: 1)
         button.layer.shadowOpacity = 0.8
         button.layer.shadowRadius = 10
         button.layer.shadowOffset = CGSize(width: -3, height: -3)

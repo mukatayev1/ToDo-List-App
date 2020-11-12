@@ -27,10 +27,9 @@ class ToDoController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let addTaskButton: UIBarButtonItem = {
             let barButton = UIBarButtonItem(image: K.addImage, style: .plain, target: self, action: #selector(barButtonAction(sender:)))
-            barButton.tintColor = .black
+            barButton.tintColor = #colorLiteral(red: 0.5647058824, green: 0.5333333333, blue: 0.831372549, alpha: 1)
             return barButton
         }()
         
@@ -64,6 +63,8 @@ class ToDoController: UITableViewController {
         }
         self.source.apply(snapshot)
     }
+    
+    
     
     //MARK: - TableView
     
