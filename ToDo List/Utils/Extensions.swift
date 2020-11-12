@@ -118,3 +118,16 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+
+//Function to strikethrough the text
+extension UILabel {
+    
+    func strikethrough() {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: text!)
+
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+
+        attributedText = attributeString
+    }
+}

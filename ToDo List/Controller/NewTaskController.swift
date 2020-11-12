@@ -58,6 +58,7 @@ class NewTaskController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar(title: "New Task", prefersLargeTitles: false)
         taskTextField.becomeFirstResponder()
+        taskTextField.delegate = self
         view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         hideKeyboardWhenTappedAround()
         
@@ -119,6 +120,7 @@ class NewTaskController: UIViewController {
 extension NewTaskController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         taskTextField.resignFirstResponder()
+        doneButtonTapped()
         return true
     }
     

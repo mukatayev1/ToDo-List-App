@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct Task: Hashable {
+class Task: NSObject {
     var text: String
     var done = false
+    
+    init(text: String) {
+        self.text = text
+    }
+    
 }
 
 enum Section {

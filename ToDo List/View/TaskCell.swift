@@ -15,9 +15,9 @@ class TaskCell: UITableViewCell {
         didSet { configure() }
     }
     
-    let textView: UITextView = {
-       let tv = UITextView()
-        tv.font = UIFont.systemFont(ofSize: 16, weight: .light)
+    let taskLabel: UILabel = {
+       let tv = UILabel()
+        tv.font = UIFont.systemFont(ofSize: 18, weight: .light)
         return tv
     }()
     
@@ -26,7 +26,7 @@ class TaskCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         subviewElements()
-//        configure()
+        configure()
         selectionStyle = .none
         
     }
@@ -41,16 +41,22 @@ class TaskCell: UITableViewCell {
 //        addSubview(checkMark)
 //        checkMark.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, paddingLeft: 0)
 //        checkMark.setDimensions(height: 30, width: 30)
-        
-        addSubview(textView)
-        textView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 10, paddingRight: 10)
+        accessoryView = UIImageView(image: K.checkmarkStarImage)
+        addSubview(taskLabel)
+        taskLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 10, paddingRight: 10)
     }
     
     func configure() {
         guard let task = task else { return }
-        textView.text = task.text
+        taskLabel.text = task.text
+        accessoryView?.isHidden = true
+        
         if task.done == false {
-            textView.textColor = UIColor.black
+            taskLabel.textColor = UIColor.black
+            accessoryView?.isHidden = true
+        } else {
+            taskLabel.textColor = UIColor.gray
+            accessoryView?.isHidden = false
         }
 
     }
