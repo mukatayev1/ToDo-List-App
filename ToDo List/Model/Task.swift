@@ -18,6 +18,5 @@ class Task: NSObject {
 }
 
 enum Section {
-    case todo
-    case completed
+    case main
 }
