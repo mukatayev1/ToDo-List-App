@@ -20,7 +20,6 @@ class NewTaskController: UIViewController {
     var cardView: UIView = {
         let myView = UIView()
         myView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
         myView.layer.cornerRadius = 15
         return myView
     }()
