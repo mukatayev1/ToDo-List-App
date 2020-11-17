@@ -38,9 +38,6 @@ class TaskCell: UITableViewCell {
     //MARK: - Helpers
     
     func subviewElements() {
-//        addSubview(checkMark)
-//        checkMark.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, paddingLeft: 0)
-//        checkMark.setDimensions(height: 30, width: 30)
         accessoryView = UIImageView(image: K.checkmarkStarImage)
         addSubview(taskLabel)
         taskLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 10, paddingRight: 10)
@@ -55,9 +52,8 @@ class TaskCell: UITableViewCell {
             taskLabel.textColor = UIColor.black
             accessoryView?.isHidden = true
         } else {
-            taskLabel.textColor = UIColor.gray
+            taskLabel.textColor = UIColor.lightGray
             accessoryView?.isHidden = false
         }
-
     }
 }

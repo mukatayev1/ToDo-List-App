@@ -1,20 +1,16 @@
 //
-//  Task.swift
+//  Item.swift
 //  ToDo List
 //
-//  Created by AZM on 2020/11/09.
+//  Created by AZM on 2020/11/16.
 //
 
 import Foundation
+import RealmSwift
 
-class Task: NSObject {
-    var text: String
-    var done = false
-    
-    init(text: String) {
-        self.text = text
-    }
-    
+class Task: Object {
+    @objc dynamic var text: String = ""
+    @objc dynamic var done: Bool = false
 }
 
 enum Section {

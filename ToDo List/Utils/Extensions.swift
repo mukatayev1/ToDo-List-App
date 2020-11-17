@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
@@ -119,15 +120,11 @@ extension UIViewController {
     }
 }
 
-
-//Function to strikethrough the text
-extension UILabel {
-    
-    func strikethrough() {
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: text!)
-
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
-
-        attributedText = attributeString
+//convert Results type to Array
+extension Results {
+    func toArray() -> [Element] {
+      return compactMap {
+        $0
+      }
     }
-}
+ }
