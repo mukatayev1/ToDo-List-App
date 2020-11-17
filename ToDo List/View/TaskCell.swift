@@ -28,7 +28,6 @@ class TaskCell: UITableViewCell {
         subviewElements()
         configure()
         selectionStyle = .none
-        
     }
     
     required init?(coder: NSCoder) {
