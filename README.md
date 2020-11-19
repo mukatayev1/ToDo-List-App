@@ -21,19 +21,19 @@ A simple and visually appealing To-Do List app created with Realm database and U
 
 ## Screenshots
 ### User Experience
-<img src="https://user-images.githubusercontent.com/53441647/99653829-df9ff900-2a9c-11eb-963f-834594083479.png" width="249.14" height="500">  <img src="https://user-images.githubusercontent.com/53441647/99653831-e169bc80-2a9c-11eb-98e2-247a1d85f5ab.png" width="249.14" height="500"> 
+<img src="https://user-images.githubusercontent.com/53441647/99653829-df9ff900-2a9c-11eb-963f-834594083479.png" width="249.14" height="500">  <img src="https://user-images.githubusercontent.com/53441647/99653831-e169bc80-2a9c-11eb-98e2-247a1d85f5ab.png" width="249.14" height="500">
+<img src="https://user-images.githubusercontent.com/53441647/99655996-b5036f80-2a9f-11eb-9626-9191a0cb5711.gif">
 
 ### Database and the App sync
-<img src="https://user-images.githubusercontent.com/53441647/99653809-dc0c7200-2a9c-11eb-939b-2430821a10c9.png" width="249.14" height="500">  <img alt="db2" src="https://user-images.githubusercontent.com/53441647/99650765-2b50a380-2a99-11eb-80b0-c9b6f34c792b.png" width="500" height="470">
+<img src="https://user-images.githubusercontent.com/53441647/99653809-dc0c7200-2a9c-11eb-939b-2430821a10c9.png" width="249.14" height="500">  <img alt="db2" src="https://user-images.githubusercontent.com/53441647/99650765-2b50a380-2a99-11eb-80b0-c9b6f34c792b.png" width="500" height="470">  
 
 ## Technologies
-Project is created with:
 * 100% Programmatic UI
 * AutoLayout
-* Firestore: Authentication, Cloud Firestore, Database
-* JGProgressHUD
+* Realm Swift
 * MVVM pattern
 * CocoaPods
+* Diffable Data Source
 
 ## Setup
 To run this project, install necessary pods using Terminal:
