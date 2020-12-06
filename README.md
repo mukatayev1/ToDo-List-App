@@ -15,6 +15,7 @@ A simple and visually appealing To-Do List app created with Realm database and U
 * Swipe to the right to mark them with checkmark
 * Swipe to the left to delete tasks
 * Smooth animations make the UX more pleasing
+### See the video: [YouTube Link](https://youtu.be/9k8vox8HIdo)
 
 ## Features
 * Data Persistance is done using Realm
